@@ -1,0 +1,19 @@
+--select first_name, last_name from hr.employees
+select substr(first_name, 2) from hr.employees --returns a substring from a string(starting at any position)
+select instr(first_name, 'e') from hr.employees --returns position number
+
+select first_name,                                                       
+       last_name,
+       email,
+       round(salary * 12, -3) as annual_salary,
+       instr(job_id,'_')+1,
+       substr(first_name,1, 2)||substr(last_name,1,2)||to_char(hire_date, 'yy')||substr(job_id, instr(job_id, '_')+1)||'@btu.edu.ge'
+  from hr.employees
+ where length(first_name || last_name) >= 10
+   and to_char(hire_date, 'yyyy') between 2005 and 2010
+   and phone_number like '5%' or
+        (phone_number like '0' and length(phone_number) > 13)
+
+
+--instr, substr, table views, loops, joins(am amocanis msgavsi, ramdenime piroba ertad roa), loops(while, for, if, then, else, elsif...), group by.
+

@@ -1,0 +1,14 @@
+SELECT
+    c.name AS city_name,
+    c.country AS country_name,
+    COUNT(d.department_id) AS department_count,
+    COUNT(e.employee_id) AS employee_count
+FROM
+    cities c
+LEFT JOIN
+    departments d ON c.city_id = d.city_id
+LEFT JOIN
+    employees e ON d.department_id = e.department_id
+GROUP BY
+    c.name,
+    c.country;

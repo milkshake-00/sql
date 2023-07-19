@@ -1,0 +1,31 @@
+declare 
+  v_name employees.first_name%TYPE;
+begin
+  select first_name into v_name from employees
+  where employee_id = 100;
+  dbms_output.put_line(v_name);
+end;
+/
+
+
+declare
+  v_fname varchar2(8);
+begin
+  select first_name into v_fname from employees
+  where employee_id = 100;
+  dbms_output.put_line(v_fname);
+end;
+/
+  
+
+--es ori bloki igives gamoitants, magram %TYPE ufro gamogadgeba
+
+
+declare
+  avg_sal employees.salary%TYPE;
+begin
+  select avg(salary) into avg_sal from employees
+  where employee_id = 107;
+  dbms_output.put_line(avg_sal);
+end;
+/

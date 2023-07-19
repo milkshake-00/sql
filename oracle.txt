@@ -1,0 +1,13 @@
+CREATE TABLE Students (
+  id NUMBER PRIMARY KEY NOT NULL,
+  name VARCHAR2(100) NOT NULL,
+  surname VARCHAR2(100) NOT NULL,
+  date_of_birth DATE NOT NULL,
+  email VARCHAR2(100),
+  phone VARCHAR2(20),
+  insert_date DATE DEFAULT SYSDATE
+);
+SELECT job_title
+FROM employees
+GROUP BY job_title
+HAVING (MAX(salary) - AVG(salary)) > (AVG(salary) - MIN(salary));

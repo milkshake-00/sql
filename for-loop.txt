@@ -1,0 +1,19 @@
+declare
+  v_res number;
+begin
+  for v_lp in 1..10 loop
+      v_res := 19 * v_lp;
+      dbms_output.put_line('19 ' || 'x ' || v_lp || ' = ' || v_res);
+  end loop;
+end;
+
+--tu piriqit gvinda ro gamoitanos:
+
+declare
+  v_res number;
+begin
+  for v_lp in reverse 1..10 loop
+      v_res := 19 * v_lp;
+      dbms_output.put_line('19 ' || 'x ' || v_lp || ' = ' || v_res);
+  end loop;
+end;

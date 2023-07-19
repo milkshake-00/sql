@@ -1,0 +1,12 @@
+declare
+  v_num number := 1;
+  v_res number; -- corrected declaration
+begin
+  while v_num <= 10 loop
+    v_res := 19 * v_num;
+    dbms_output.put_line('19 ' || ' x ' || v_num || ' = ' || v_res);
+    v_num := v_num + 1;
+  end loop;
+  dbms_output.put_line('outside the loop');
+end;
+/
